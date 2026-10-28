@@ -12,8 +12,7 @@ This repository contains a computational study evaluating the efficacy of **Dyna
 The experimental pipeline is divided into two phases:
 
 1. **Synthetic Topology Benchmark (`src/run_synthetic.py`):** Systematic generation and simulation of Random Boolean Networks (RBNs) across increasing scales ($N \in \{5, 8, 10, 13, 16\}$ nodes, in-degree $k \in \{1, 2, 3\}$). Time-series trajectories are simulated under four distinct regimes:
-   * **Synchronous (`sync_base`):** Deterministic simultaneous state transitions across all nodes ($T = 100$, sampling interval $\Delta t = 1$)
-   * .
+   * **Synchronous (`sync_base`):** Deterministic simultaneous state transitions across all nodes ($T = 100$, sampling interval $\Delta t = 1$).
    * **Asynchronous (`async`):** Stochastic single-node updates per time step, modeling asynchronous biological update dynamics ($T = 200, \Delta t = 1$).
    * **Sub-sampled (`sampled`):** Synchronous updates recorded every 3rd step ($T = 150, \Delta t = 3$), testing causal signal degradation under low temporal resolution.
    * **Transient (`transient`):** Short synchronous bursts ($T = 20, \Delta t = 1$) capturing pre-attractor dynamic transitions.
@@ -95,7 +94,7 @@ To decouple the runtimes without containerization overhead, the pipeline impleme
 │   ├── datasets/               # Transposed time-series expression matrices (.txt)
 │   └── results/                # Inferred structures (.cpd) and aggregated metrics (.csv)
 ├── docs/
-│   └── sad2_report.pdf         # Full academic report and theoretical analysis
+│   └── report.pdf              # Full academic report and theoretical analysis
 ├── src/
 │   ├── config.py               # Centralized path configuration and constants
 │   ├── networks/               # RBN generator (rbn.py) and .bnet compiler (bnet_parser.py)
